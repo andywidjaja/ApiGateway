@@ -1,0 +1,37 @@
+﻿{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "DEVUBUCLUSTER.pt.int",
+          "Port": 51010
+        }
+      ],
+      "UpstreamPathTemplate": "/api/{everything}",
+      "Priority": 1,
+      "UpstreamHttpMethod": [],
+      "DelegatingHandlers": [
+        "ShapeManagerRequestHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "DEVUBUCLUSTER.pt.int",
+          "Port": 51010
+        }
+      ],
+      "UpstreamPathTemplate": "/{everything}",
+      "Priority": 0,
+      "UpstreamHttpMethod": [],
+      "DelegatingHandlers": [
+        "ShapeManagerRequestHandler"
+      ]
+    }
+  ],
+  "GlobalConfiguration": {}
+}
